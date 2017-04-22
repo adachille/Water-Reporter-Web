@@ -33,7 +33,7 @@ body {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="password"] {
+.form-signin input[type="address"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -41,24 +41,5 @@ body {
 
 
 
-.btn {
-  width: 100px;
-  height: 40px;
-
-}
-
-.buttonContainer{
-  vertical-align: middle;
-  text-align: center;
-}
-
-#btnSubmit {
-  display: inline-block;
-  vertical-align: top;
-}
 
 
-#btnCancel {
-  display: inline-block;
-  vertical-align: top;
-}
