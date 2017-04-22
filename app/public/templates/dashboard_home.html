@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <html lang = "en">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name = 'description' content = "CheckIn Website">
+    <meta name = 'author' content = "99 Lines But a Bug Ain't One">
+
+    <title>CheckIn</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+    <!-- JS -->
+    <script src="{% static 'pages/js/jquery-3.2.0.js' %}"></script>
+    <script src="{% static 'pages/js/jquery.qrcode.min.js' %}"></script>
+    <script src="{% static 'pages/js/bootstrap.js' %}"></script>
+
+    <!-- OUR JS -->
+    <script src="{% static 'pages/js/custom.js' %}"></script>
+
+    <!-- OUR Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/style.css' %}" />
+
+</head>
+
+
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+    <div id="wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle"
+                            data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'index' %}" style="color: #FFF";>
+                        <img src="{% static 'pages/img/CheckLogo.png' %}"/> CheckIn
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="{% url 'index' %}"><i class="fa fa-home"></i>Home </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'qrtest' %}"><i class="fa fa-paper-plane-o"></i>Pass Maker</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'map' %}"><i class="fa fa-map-o"></i>Property Map</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'manage_priviliges' %}"><i class="fa fa-wrench"></i>Manage Privileges</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+
+        <!-- MAIN PAGE -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Admin Home</h2>
+                        <h5 style="width: 75%">Welcome to your Admin Home Page. Here you can see all the visitors on your campus
+                            that checked in using our QR Code system and if they are still on site. </h5>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+
+
+                        <h4>Table Key</h4>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr class="success">
+                                    <td>Left Campus</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>Still On Campus</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h4>Current Visitors on Site</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Arrival Time</th>
+                                    <th>Departure Time</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="success">
+                                    <td>1</td>
+                                    <td>Dwight</td>
+                                    <td>Eisenhower</td>
+                                    <td>8:31</td>
+                                    <td>9:31</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>2</td>
+                                    <td>Jack</td>
+                                    <td>Kennedy</td>
+                                    <td>9:21</td>
+                                    <td>10:31</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>3</td>
+                                    <td>Barack</td>
+                                    <td>Obama</td>
+                                    <td>11:05</td>
+                                    <td>12:31</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>4</td>
+                                    <td>George</td>
+                                    <td>Washington</td>
+                                    <td>12:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>5</td>
+                                    <td>Gerald</td>
+                                    <td>Ford</td>
+                                    <td>16:05</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>6</td>
+                                    <td>John</td>
+                                    <td>Adams</td>
+                                    <td>18:35</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>7</td>
+                                    <td>Teddy</td>
+                                    <td>Roosevelt</td>
+                                    <td>19:05</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>8</td>
+                                    <td>Herbert</td>
+                                    <td>Hoover</td>
+                                    <td>21:05</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+
+        <div class="row">
+            <div class="col-lg-12">
+                &copy; CheckIn Services Group (aka 99 Lines but a Bug Ain't One)
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
