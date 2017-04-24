@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var google_auth = require('google-auth-library');
 
 // Uses public folder for static files
 app.use(express.static('public'));
@@ -37,7 +38,7 @@ app.get('/register', function(req, res) {
 app.get('/dashboard', function(req, res) {
     console.log("Got a GET request for the dashboard page, "
         + "sending dashboard");
-    res.sendFile( __dirname + "/public/templates/dashboard.html");
+    res.sendFile( __dirname + "/public/templates/dashboard_home.html");
 });
 
 

@@ -7,6 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="google-signin-client_id" content="968015104825-ua7d2gradoiatt2lhamt35jordh7t9gr.apps.googleusercontent.com">
 
 
     <title> Log In </title>
@@ -19,6 +20,9 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/signin.css" rel="stylesheet">
+
+    <!-- Google Log-in -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,6 +44,7 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
 </div> <!-- /container -->
 
