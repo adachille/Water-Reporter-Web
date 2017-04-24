@@ -47,26 +47,31 @@ body {
 .btn {
   width: 100px;
   height: 40px;
-
 }
 
 .buttonContainer{
   vertical-align: middle;
   text-align: center;
-  margin: 0
-  auto;
-  width:400px
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width:400px;
+}
+
+.g-signin2 {
+  margin-left: 50px;
 }
 
 #btnSubmit {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: bottom ! important;
+  margin-left: 20px;
 }
 
 
 #btnCancel {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: bottom ! important;
+  margin-right: 20px;
 }
 
 
