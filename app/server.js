@@ -37,7 +37,15 @@ app.get('/register', function(req, res) {
 app.get('/dashboard', function(req, res) {
     console.log("Got a GET request for the dashboard page, "
         + "sending dashboard");
-    res.sendFile( __dirname + "/public/templates/dashboard.html");
+    res.sendFile( __dirname + "/public/templates/dashboard_home.html");
+});
+
+
+// Profile page requests
+app.get('/profile', function(req, res) {
+    console.log("Got a GET request for the profile, "
+        + "sending profile");
+    res.sendFile( __dirname + "/public/templates/profile-info.html");
 });
 
 

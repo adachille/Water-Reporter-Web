@@ -39,7 +39,10 @@ body {
   border-top-right-radius: 0;
 }
 
-
+.container {
+  vertical-align: middle;
+  text-align: center;
+}
 
 .btn {
   width: 100px;
@@ -50,6 +53,9 @@ body {
 .buttonContainer{
   vertical-align: middle;
   text-align: center;
+  margin: 0
+  auto;
+  width:400px
 }
 
 #btnSubmit {
@@ -62,3 +68,5 @@ body {
   display: inline-block;
   vertical-align: top;
 }
+
+
