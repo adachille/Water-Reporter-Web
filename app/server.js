@@ -42,6 +42,14 @@ app.get('/dashboard', function(req, res) {
 });
 
 
+// Profile page requests
+app.get('/profile', function(req, res) {
+    console.log("Got a GET request for the profile, "
+        + "sending profile");
+    res.sendFile( __dirname + "/public/templates/profile-info.html");
+});
+
+
 var server = app.listen(8081, function() {
     var host = server.address().address
     var port = server.address().port

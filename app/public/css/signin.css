@@ -38,3 +38,35 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.container {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+
+}
+
+.buttonContainer{
+  vertical-align: middle;
+  text-align: center;
+  margin: 0
+  auto;
+  width:400px
+}
+
+#btnSubmit {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+#btnCancel {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
