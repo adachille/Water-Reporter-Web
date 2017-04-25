@@ -32,17 +32,18 @@
 <div class="container">
 
     <form class="form-source-report">
+
+        <img src="../img/map_pin.png" />
         <h2 class="form-source-report-heading"> New Water Source Report </h2>
 
         <h3> Location </h3>
 
-        <label for="inputLocation" class="sr-only">Long, Lat</label>
-        <input type="text" id="inputLocation" class="form-control" placeholder="Long, Lat" required autofocus>
+        <label for="inputLocation" class="sr-only"> Long, Lat</label>
+        <input type="text" id="inputLocation" class="form-control" style="width: 300px;" placeholder="Long, Lat" required autofocus>
 
         <br>
 
         <h3> Type of Water </h3>
-        <br>
 
         <input type="radio" name="typeOfWater" id="bottled" value="bottled"/>
         <label for="bottled"> Bottled </label>
@@ -63,10 +64,9 @@
         <label for="other"> Other </label>
 
         <br>
+        <br>
 
         <h3> Condition of Water </h3>
-
-        <br>
 
         <input type="radio" name="conditionOfWater" id="waste" value="waste"/>
         <label for="waste"> Waste </label>
@@ -79,12 +79,18 @@
 
         <input type="radio" name="conditionOfWater" id="potable" value="potable"/>
         <label for="potable"> Lake </label>
+        <br>
+        <br>
 
 
+        <div class = "buttonContainer">
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+                <a href="javascript:history.back()" id = "btnCancel" class="btn btn-lg btn-danger btn-block" type = "reset" > Cancel </a>
 
-        <a href="javascript:history.back()" id = "btnCancel" class="btn btn-lg btn-danger btn-block" type = "reset" > Cancel </a>
+                <button class="btn btn-lg btn-primary btn-block" id = "btnSave" type="submit">Save</button>
+
+        </div>
+
 
 
     </form>

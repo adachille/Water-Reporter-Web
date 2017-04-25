@@ -122,7 +122,7 @@ app.get('/profile', function(req, res) {
     });
 });
 
-app.post('/profile', function(req, res) {
+app.post('/edit_profile', function(req, res) {
     var user = firebase.auth().currentUser;
     if (user) {
         res.sendFile( __dirname + "/public/templates/profile-info.html");
@@ -151,13 +151,19 @@ app.get('/dashboard', function(req, res) {
 });
 
 
-//Worker Dashboard page requests
+//Worker Worker Dashboard page requests
 app.get('/workerdashboard', function(req, res) {
     console.log("Got a GET request for the worker dashboard page, "
         + "sending worker dashboard");
     res.sendFile( __dirname + "/public/templates/worker_dashboard_home.html");
 });
 
+//Worker Worker Dashboard page requests
+app.get('/managerdashboard', function(req, res) {
+    console.log("Got a GET request for the worker dashboard page, "
+        + "sending worker dashboard");
+    res.sendFile( __dirname + "/public/templates/manager_dashboard_home.html");
+});
 
 //Water Source Report  page requests
 app.get('/submitSourceReport', function(req, res) {
