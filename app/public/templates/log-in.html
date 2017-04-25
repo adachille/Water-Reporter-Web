@@ -8,6 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="google-signin-client_id" content="968015104825-ua7d2gradoiatt2lhamt35jordh7t9gr.apps.googleusercontent.com">
+    <meta name="google-signin-cookiepolicy" content="single_host_origin">
+    <meta name="google-signin-scope" content="profile email">
 
 
     <title> Log In </title>
@@ -62,7 +64,23 @@
 
     <div class = "buttonContainer">
         <div class="g-signin2" <div class="g-signin2" data-width="300" data-height="40" data-longtitle="true"> data-onsuccess="onSignIn"></div>
+        <script>
+            function onSignIn(googleUser) {
+                var data = new FormData();
+                var id_token = googleUser.getAuthResponse().id_token;
+                data.append('id_token', id_token);
+
+                var xhr = new XMLHttpRequest();
+                xh.setRequestHeader("Content-Type", "text/xml");
+                xhr.open('POST', '/id_token', true);
+                xhr.onload = function () {
+                    console.log(this.responseText);
+                };
+                xhr.send(data);
+            }
+        </script>
     </div>
+
 
 </div> <!-- /container -->
 

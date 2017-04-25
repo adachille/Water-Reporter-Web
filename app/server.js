@@ -1,9 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+
+// Google sign in initialization
 var google_auth = require('google-auth-library');
-var firebase = require("firebase");
+
 // Initialize Firebase
+var firebase = require("firebase");
 var config = {
   apiKey: "AIzaSyBMqKgR6hjywnkKPNw9kgPNdLAV0_3bA2Q",
   authDomain: "cs2340-cb649.firebaseapp.com",
@@ -60,6 +63,27 @@ app.post('/login', function(req, res) {
 });
 
 
+// Google sign in request
+app.post('/id_token', function(req, res) {
+    console.log("User is trying to login using Google account");
+
+    var id_token = JSON.stringify(req.data.id_token);
+    console.log("id_token: %s", id_token);
+
+    // Build Firebase credential with the Google ID token.
+    var credential = firebase.auth.GoogleAuthProvider.credential(id_token);
+
+    // Sign in with credential from the Google user.
+    firebase.auth().signInWithCredential(credential).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("Error Code: %s", errorCode);
+        console.log("Error Message: %s", errorMessage)
+    });
+});
+
+
 // Register page requests
 app.get('/register', function(req, res) {
     console.log("Got a GET request for the register page, "
@@ -106,6 +130,16 @@ app.post('/profile', function(req, res) {
         console.log("User not signed in, cannot access dashboard.");
         res.status(403);
     }
+
+    var userAddress = req.body.address;
+    var typeOfuser = req.body.userType;
+    function writeUserData(userId, userAddress, typeOfuser) {
+        firebase.database().ref('users/' + userId).set( {
+            address: userAddress,
+            userType: typeOfuser
+        });
+    }
+
 });
 
 
@@ -113,13 +147,7 @@ app.post('/profile', function(req, res) {
 app.get('/dashboard', function(req, res) {
     console.log("Got a GET request for the dashboard page, "
         + "sending dashboard");
-    var user = firebase.auth().currentUser;
-    if (user) {
-        res.sendFile( __dirname + "/public/templates/dashboard_home.html");
-    } else {
-        console.log("User not signed in, cannot access dashboard.");
-        res.status(403);
-    }
+    res.sendFile( __dirname + "/public/templates/dashboard_home.html");
 });
 
 
@@ -145,7 +173,6 @@ app.get('/submitPurityReport', function(req, res) {
         + "submit water purity report");
     res.sendFile( __dirname + "/public/templates/purityReport.html");
 });
-
 
 
 var server = app.listen(8081, function() {
