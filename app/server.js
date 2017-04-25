@@ -34,11 +34,32 @@ app.get('/register', function(req, res) {
     res.sendFile( __dirname + "/public/templates/register.html");
 });
 
-// Dashboard page requests
+// User Dashboard page requests
 app.get('/dashboard', function(req, res) {
     console.log("Got a GET request for the dashboard page, "
         + "sending dashboard");
     res.sendFile( __dirname + "/public/templates/dashboard_home.html");
+});
+
+//Worker Dashboard page requests
+app.get('/workerdashboard', function(req, res) {
+    console.log("Got a GET request for the worker dashboard page, "
+        + "sending worker dashboard");
+    res.sendFile( __dirname + "/public/templates/worker_dashboard_home.html");
+});
+
+//Water Source Report  page requests
+app.get('/submitSourceReport', function(req, res) {
+    console.log("Got a GET request for the submit water source report page, "
+        + "submit water source report");
+    res.sendFile( __dirname + "/public/templates/sourceReport.html");
+});
+
+//Water Purity Report page requests
+app.get('/submitPurityReport', function(req, res) {
+    console.log("Got a GET request for the submit water purity report page, "
+        + "submit water purity report");
+    res.sendFile( __dirname + "/public/templates/purityReport.html");
 });
 
 
