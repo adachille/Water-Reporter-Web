@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title> Source Report Information </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <link href="../css/sourceReport.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+
+    <form class="form-source-report">
+        <h2 class="form-source-report-heading"> Enter the Information of the Water Source Report </h2>
+
+        <h3> Location </h3>
+
+        <label for="inputLocation" class="sr-only">Long,Lat</label>
+        <input type="text" id="inputLocation" class="form-control" placeholder="Long,Lat" required autofocus>
+
+        <br>
+
+        <h3> Type of Water </h3>
+        <br>
+
+        <input type="radio" name="typeOfWater" id="bottled" value="bottled"/>
+        <label for="bottled"> Bottled </label>
+
+        <input type="radio" name="typeOfWater" id="well" value="well"/>
+        <label for="well"> Well </label>
+
+        <input type="radio" name="typeOfWater" id="stream" value="stream"/>
+        <label for="stream"> Stream </label>
+
+        <input type="radio" name="typeOfWater" id="lake" value="lake"/>
+        <label for="lake"> Lake </label>
+
+        <input type="radio" name="typeOfWater" id="spring" value="spring"/>
+        <label for="spring"> Spring </label>
+
+        <input type="radio" name="typeOfWater" id="other" value="other"/>
+        <label for="other"> Other </label>
+
+        <br>
+
+        <h3> Condition of Water </h3>
+
+        <br>
+
+        <input type="radio" name="conditionOfWater" id="waste" value="waste"/>
+        <label for="waste"> Waste </label>
+
+        <input type="radio" name="conditionOfWater" id="treatable-clear" value="treatable-clear"/>
+        <label for="treatable-clear"> Well </label>
+
+        <input type="radio" name="conditionOfWater" id="treatable-muddy" value="treatable-muddy"/>
+        <label for="treatable-muddy"> Stream </label>
+
+        <input type="radio" name="conditionOfWater" id="potable" value="potable"/>
+        <label for="potable"> Lake </label>
+
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+
+        <a href="javascript:history.back()" id = "btnCancel" class="btn btn-lg btn-danger btn-block" type = "reset" > Cancel </a>
+
+
+    </form>
+
+</div>  <!-- /container -->
+
+
+</body>
+</html>
