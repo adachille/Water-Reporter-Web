@@ -35,16 +35,16 @@
 
 <div class="container">
 
-    <form class="form-signin">
+    <form action="/login" method="post" class="form-signin" id="login-form">
         <h2 class="form-signin-heading">Please sign in</h2>
 
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
 
         <br>
 
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
 
 
 
@@ -54,7 +54,7 @@
 
         <a href="/" id = "btnCancel" class="btn btn-lg btn-danger btn-block" type = "reset" > Cancel</a>
 
-        <button id = "btnSubmit" class= "btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button id = "btnSubmit" class= "btn btn-lg btn-primary btn-block" type="submit" form="login-form" value="Submit">Sign in</button>
 
     </div>
 

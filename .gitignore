@@ -36,4 +36,8 @@
 ehthumbs.db
 Thumbs.db
 
-app/nodemodules/
+app/node_modules/
+app/functions/
+app/firebase.json
+app/database.rules.json
+app/.firebaserc
