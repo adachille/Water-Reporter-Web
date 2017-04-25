@@ -1,6 +1,15 @@
 var express = require('express');
 var app = express();
 var google_auth = require('google-auth-library');
+var firebase = require("firebase");
+// Initialize Firebase
+var config = {
+  apiKey: " AIzaSyAFL8ySS_K0tQWW6KxRp5TqLNAYJuflsVw",
+  authDomain: "cs2340-cb649.firebaseapp.com",
+  databaseURL: "https://cs2340-cb649.firebaseio.com/",
+};
+var firebaseApp = firebase.initializeApp(config);
+var database = firebaseApp.database();
 
 // Uses public folder for static files
 app.use(express.static('public'));
