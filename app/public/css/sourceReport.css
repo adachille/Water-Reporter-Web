@@ -4,7 +4,7 @@ body {
   background-color: #eee;
 }
 
-.form-profile {
+.form-signin {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
@@ -33,13 +33,45 @@ body {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="text"] {
+.form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
+.container {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+}
+
+.buttonContainer{
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width:400px;
+}
+
+.g-signin2 {
+  margin-left: 50px;
+}
+
+#btnSubmit {
+  display: inline-block;
+  vertical-align: bottom ! important;
+  margin-left: 20px;
+}
 
 
+#btnCancel {
+  display: inline-block;
+  vertical-align: bottom ! important;
+  margin-right: 20px;
+}
 
 
