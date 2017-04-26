@@ -29,9 +29,26 @@
 
 <body>
 
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role = "navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <div  class="navbar-brand" href = "/dashboard" style = "color: #FFF; height: 90px">
+                        <img src="../img/water_logo.png" />
+                        <h1> Water Reporter </h1>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+
+
 <div class="container">
 
     <form class="form-purity-report">
+        <img src="../img/contaminant.png" />
         <h2 class="form-purity-report-heading"> New Water Purity Report </h2>
 
         <h3> Location </h3>
@@ -40,9 +57,10 @@
         <input type="text" id="inputLocation class="form-control" placeholder="Long, Lat" required autofocus>
 
         <br>
+        <br>
+
 
         <h3> Overall Condition </h3>
-        <br>
 
         <input type="radio" name="overallCondition" id="safe" value="safe"/>
         <label for="safe"> Safe </label>
@@ -54,16 +72,27 @@
         <label for="unsafe"> Unsafe </label>
 
         <br>
+        <br>
+
 
         <label for="inputVirusPPM" class="sr-only"> Virus PPM </label>
         <input type="number" id="inputVirusPPM" class="form-control" placeholder="Virus PPM " required autofocus>
 
+        <br>
+
         <label for="inputContaminantPPM" class="sr-only">Long,Lat</label>
         <input type="number" id="inputContaminantPPM" class="form-control" placeholder="Contaminant PPM" required autofocus>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+        <br>
+        <br>
 
-        <a href="javascript:history.back()" id = "btnCancel" class="btn btn-lg btn-danger btn-block" type = "reset" > Cancel </a>
+        <div class = "buttonContainer">
+
+                <a href="javascript:history.back()" id = "btnCancel" class="btn btn-lg btn-danger btn-block" type = "reset" > Cancel </a>
+
+                <button class="btn btn-lg btn-primary btn-block" id = "btnSave" type="submit">Save</button>
+
+        </div>
 
 
     </form>

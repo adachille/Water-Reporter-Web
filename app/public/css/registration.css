@@ -1,7 +1,7 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-color: #e6faff;
 }
 
 .form-register {
@@ -40,4 +40,37 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.buttonContainer{
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width:400px;
+}
+
+
+#btnSubmit {
+  display: inline-block;
+  vertical-align: bottom ! important;
+  margin-left: 20px;
+}
+
+
+#btnCancel {
+  display: inline-block;
+  vertical-align: bottom ! important;
+  margin-right: 20px;
+}
+
+.container {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+}
+
 
