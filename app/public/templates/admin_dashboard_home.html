@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <html lang = "en">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name = 'description' content = "CheckIn Website">
+    <meta name = 'author' content = "99 Lines But a Bug Ain't One">
+
+    <title>Water Reporter</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+    <!-- JS -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    <!-- OUR Styles -->
+    <link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
+
+    <style>
+         #map {
+           width: 800px;
+           height: 800px;
+
+         }
+    </style>
+
+</head>
+
+
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role = "navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <div  class="navbar-brand" href = "/dashboard" style = "color: #FFF; height: 90px">
+                        <img src="../img/water_logo.png" />
+                        <h1> Water Reporter </h1>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+
+
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;Home</a>
+                    </li>
+
+                    <li>
+                        <a href="/profile"> <i class = "fa fa-user-circle fa-fw" aria-hidden="true"></i>&nbsp;Edit Profile </a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-trash fa-fw" aria-hidden="true"> </i>&nbsp;Delete Accounts</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-check fa-fw" aria-hidden="true"> </i>&nbsp;Unblock Accounts</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-ban fa-fw" aria-hidden="true"> </i>&nbsp;Ban Users</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-file fa-fw" aria-hidden="true"> </i>&nbsp;View Security Log</a>
+                    </li>
+
+                    <li>
+                        <a href="/" type = "reset"> <i class="fa fa-sign-out fa-fw" aria-hidden="true"> </i>&nbsp;Log Out </a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+
+
+
+
+        <!-- MAIN PAGE -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Admin Home</h2>
+                        <h5 style="width: 100%"> Welcome to your Admin Home Page. Here you can see manager user accounts and view security logs of the system. </h5>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+
+                        <h4>Security Log  </h4>
+
+                        <div class="table-responsive">
+                            <table class="table" width="600">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Type</th>
+                                    <th>Time</th>
+                                    <th>Email</th>
+                                    <th>Other Information</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="danger">
+                                    <td>1</td>
+                                    <td>Ban Account</td>
+                                    <td>12:35</td>
+                                    <td>ktran77@gatech.edu</td>
+                                    <td>Admin ID: dachille31@gatech.edu</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>2</td>
+                                    <td>Unblock Account</td>
+                                    <td>1:30</td>
+                                    <td>cpano@gatech.edu</td>
+                                    <td>Admin ID: ktran77@gatech.edu</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>3</td>
+                                    <td>Log-In</td>
+                                    <td>5:00 </td>
+                                    <td>socialbutterly@gmail.com</td>
+                                    <td>Status: Successful</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>4</td>
+                                    <td>Log-In</td>
+                                    <td>10:00</td>
+                                    <td>bzhang@gatech.edu</td>
+                                    <td>Status: Wrong Password</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>5</td>
+                                    <td>Report Delete</td>
+                                    <td>3:14</td>
+                                    <td>tsharma@gmail.com</td>
+                                    <td>Report Number: 2</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>6</td>
+                                    <td>Account Delete</td>
+                                    <td>18:35</td>
+                                    <td>ktran77@gatech.edu</td>
+                                    <td>Deleted ID: dachille@gatech.edu</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>7</td>
+                                    <td>Log-In </td>
+                                    <td>19:05</td>
+                                    <td>dbecker@gatech.edu</td>
+                                    <td>Status: Successful</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>8</td>
+                                    <td>Ban Account</td>
+                                    <td>16:35</td>
+                                    <td>dachille31@gatech.edu</td>
+                                    <td>Admin ID: ktran77@gatech.edu</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+
+        <div class="row">
+            <div class="col-lg-12">
+                &copy; Water Reporter Services Group
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

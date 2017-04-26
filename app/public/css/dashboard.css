@@ -163,4 +163,12 @@ Media Queries
     font-size: 24px;
 }
 
+.table-responsive {
+    overflow: scroll;
+    width: 600px;
+    height: 600px;
+}
+
+
+
 

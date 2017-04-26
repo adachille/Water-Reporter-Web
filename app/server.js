@@ -125,12 +125,11 @@ app.post('/new_profile', function(req,res) {
     console.log("User is of type: %s", userType);
 
     // Redirects user based on type
-    /*if (userType.localeCompare("admin") == 0) {
-        //console.log("admin confirmed")
-        //res.sendFile( __dirname +
-        //    "/public/templates/admin_dashboard_home.html");
+    if (userType.localeCompare("admin") == 0) {
+        console.log("admin confirmed")
+        res.sendFile( __dirname + "/public/templates/admin_dashboard_home.html");
 
-    } else*/ if (userType.localeCompare("manager") == 0) {
+    } else if (userType.localeCompare("manager") == 0) {
         console.log("manager confirmed")
         res.sendFile( __dirname + "/public/templates/manager_dashboard_home.html");
 
@@ -176,18 +175,25 @@ app.get('/dashboard', function(req, res) {
 });
 
 
-//Worker Worker Dashboard page requests
+//Worker Dashboard page requests
 app.get('/workerdashboard', function(req, res) {
     console.log("Got a GET request for the worker dashboard page, "
         + "sending worker dashboard");
     res.sendFile( __dirname + "/public/templates/worker_dashboard_home.html");
 });
 
-//Worker Worker Dashboard page requests
+//Manager Dashboard page requests
 app.get('/managerdashboard', function(req, res) {
     console.log("Got a GET request for the worker dashboard page, "
         + "sending worker dashboard");
     res.sendFile( __dirname + "/public/templates/manager_dashboard_home.html");
+});
+
+//Admin Dashboard page requests
+app.get('/admindashboard', function(req, res) {
+    console.log("Got a GET request for the viewReport page, "
+        + "sending view reports template");
+    res.sendFile( __dirname + "/public/templates/admin_dashboard_home.html");
 });
 
 //Water Source Report  page requests

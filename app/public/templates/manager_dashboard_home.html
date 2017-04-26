@@ -201,8 +201,6 @@
                               });
                             });
 
-                            // Create a heatmap.
-
                             initAuthentication(initFirebase.bind(undefined, map));
                           }
 
@@ -211,7 +209,7 @@
                            * @param {!google.maps.visualization.HeatmapLayer} heatmap The heatmap to
                            * which points are added from Firebase.
                            */
-                          function initFirebase(heatmap) {
+                          function initFirebase(map) {
 
                             // 10 minutes before current time.
                             var startTime = new Date().getTime() - (60 * 10 * 1000);
