@@ -102,44 +102,35 @@ app.post('/register', function(req, res) {
             console.log(error.message);
     });
 
+    // Put user infor into database
+    var userId = firebase.auth().currentUser.uid;
+    function writeUserData(userId, email) {
+        firebase.database().ref('users/' + userId).set( {
+            email: email,
+            address: null,
+            userType: null
+        });
+    }
+
     res.sendFile( __dirname + "/public/templates/profile-info.html");
 });
 
 
-// Profile page requests
-app.get('/profile', function(req, res) {
-    console.log("Got a GET request for the profile, "
-        + "sending profile");
-
-    // Opens profile page if logged on, else send to login page
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            res.sendFile( __dirname + "/public/templates/profile-info.html");
-        } else {
-            console.log("User is not logged in");
-            res.sendFile( __dirname + "/public/templates/log-in.html");
-        }
-    });
-});
-
+// Edit profile page requests
 app.post('/edit_profile', function(req, res) {
     var user = firebase.auth().currentUser;
-    if (user) {
-        res.sendFile( __dirname + "/public/templates/profile-info.html");
-    } else {
-        console.log("User not signed in, cannot access dashboard.");
-        res.status(403);
-    }
 
-    var userAddress = req.body.address;
-    var typeOfuser = req.body.userType;
+    var userAddress = JSON.stringify(req.body.address);
+    var typeOfuser = JSON.stringify(req.body.userType);
+    var updates = {};
+    updates['/userAddress/' + ] = userAddress;
+    updates['/userType/' + newPostKey] = userAddress;
     function writeUserData(userId, userAddress, typeOfuser) {
         firebase.database().ref('users/' + userId).set( {
             address: userAddress,
             userType: typeOfuser
         });
     }
-
 });
 
 
