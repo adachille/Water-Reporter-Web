@@ -206,8 +206,8 @@ app.get('/submitPurityReport', function(req, res) {
 });
 
 //View Reports page requests
-app.get('/view_reports', function(req, res) {
-    console.log("Got a GET request for the viewReports page, "
+app.get('/viewReport', function(req, res) {
+    console.log("Got a GET request for the viewReport page, "
         + "sending view reports template");
     res.sendFile( __dirname + "/public/templates/view_reports.html");
 });
