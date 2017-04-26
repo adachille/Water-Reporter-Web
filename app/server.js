@@ -205,6 +205,13 @@ app.get('/submitPurityReport', function(req, res) {
     res.sendFile( __dirname + "/public/templates/purityReport.html");
 });
 
+//View Reports page requests
+app.get('/view_reports', function(req, res) {
+    console.log("Got a GET request for the viewReports page, "
+        + "sending view reports template");
+    res.sendFile( __dirname + "/public/templates/view_reports.html");
+});
+
 
 var server = app.listen(8081, function() {
     var host = server.address().address
