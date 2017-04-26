@@ -8,9 +8,12 @@ var google_auth = require('google-auth-library');
 // Initialize Firebase
 var firebase = require("firebase");
 var config = {
-  apiKey: "AIzaSyBMqKgR6hjywnkKPNw9kgPNdLAV0_3bA2Q",
-  authDomain: "cs2340-cb649.firebaseapp.com",
-  databaseURL: "https://cs2340-cb649.firebaseio.com/",
+    apiKey: "AIzaSyBMqKgR6hjywnkKPNw9kgPNdLAV0_3bA2Q",
+    authDomain: "cs2340-cb649.firebaseapp.com",
+    databaseURL: "https://cs2340-cb649.firebaseio.com",
+    projectId: "cs2340-cb649",
+    storageBucket: "cs2340-cb649.appspot.com",
+    messagingSenderId: "524782268330"
 };
 var firebaseApp = firebase.initializeApp(config);
 var database = firebaseApp.database();
@@ -123,14 +126,14 @@ app.post('/edit_profile', function(req, res) {
     var userAddress = JSON.stringify(req.body.address);
     var typeOfuser = JSON.stringify(req.body.userType);
     var updates = {};
-    updates['/userAddress/' + ] = userAddress;
+    /*updates['/userAddress/' + ] = userAddress;
     updates['/userType/' + newPostKey] = userAddress;
     function writeUserData(userId, userAddress, typeOfuser) {
         firebase.database().ref('users/' + userId).set( {
             address: userAddress,
             userType: typeOfuser
         });
-    }
+    }*/
 });
 
 
