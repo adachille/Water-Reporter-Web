@@ -98,7 +98,7 @@ app.post('/register', function(req, res) {
     // Create new user
     console.log("Got a POST request from register page to "
         + "create new user.")
-    var email = req.body.email;
+    /*var email = req.body.email;
     var password = req.body.password;
     firebase.auth().createUserWithEmailAndPassword(email,
         password).catch(function(error) {
@@ -113,20 +113,51 @@ app.post('/register', function(req, res) {
             address: null,
             userType: null
         });
-    }
+    }*/
 
-    res.sendFile( __dirname + "/public/templates/profile-info.html");
+    res.sendFile( __dirname + "/public/templates/new_profile.html");
+});
+
+
+// New Profile page requests
+app.post('/new_profile', function(req,res) {
+    var userType = req.body.userType;
+    console.log("User is of type: %s", userType);
+
+    // Redirects user based on type
+    /*if (userType.localeCompare("admin") == 0) {
+        //console.log("admin confirmed")
+        //res.sendFile( __dirname +
+        //    "/public/templates/admin_dashboard_home.html");
+
+    } else*/ if (userType.localeCompare("manager") == 0) {
+        console.log("manager confirmed")
+        res.sendFile( __dirname + "/public/templates/manager_dashboard_home.html");
+
+    } else if (userType.localeCompare("worker") == 0) {
+        console.log("worker confirmed")
+        res.sendFile( __dirname + "/public/templates/worker_dashboard_home.html");
+
+    } else {
+        console.log("user confirmed")
+        res.sendFile( __dirname + "/public/templates/dashboard_home.html");
+    }
 });
 
 
 // Edit profile page requests
-app.post('/edit_profile', function(req, res) {
-    var user = firebase.auth().currentUser;
+app.get('/profile', function(req, res) {
+    console.log("Got a GET request for the profile page, "
+        + "sending profile template");
+    res.sendFile( __dirname + "/public/templates/profile-info.html");
+});
+app.post('/profile', function(req, res) {
+    /*var user = firebase.auth().currentUser;
 
     var userAddress = JSON.stringify(req.body.address);
     var typeOfuser = JSON.stringify(req.body.userType);
     var updates = {};
-    /*updates['/userAddress/' + ] = userAddress;
+    updates['/userAddress/' + ] = userAddress;
     updates['/userType/' + newPostKey] = userAddress;
     function writeUserData(userId, userAddress, typeOfuser) {
         firebase.database().ref('users/' + userId).set( {

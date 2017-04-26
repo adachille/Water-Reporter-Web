@@ -33,7 +33,7 @@
 
         <img src="../img/water_logo.png" />
 
-        <form class="form-profile">
+        <form action="/new_profile" method="post" class="form-profile" id="new_profile_form">
             <h2 class="form-profile-heading" font-size: 18px;> Enter Your Profile Information</h2>
 
             <br>
@@ -65,7 +65,7 @@
 
                 <a href="javascript:history.back()" id = "btnCancel" class="btn btn-lg btn-danger btn-block" type = "reset" > Cancel </a>
 
-                <button class="btn btn-lg btn-primary btn-block" id = "btnSave" type="submit">Save</button>
+                <button class="btn btn-lg btn-primary btn-block" form="new_profile_form" id = "btnSave" type="submit">Save</button>
 
         </div>
 
